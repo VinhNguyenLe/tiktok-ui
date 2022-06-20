@@ -2,7 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
 :root {
+    //*
     --primary: #f62c55;
+    --black: #000;
+    --white: #fff;
+    --text-color: #333;
+    //* Header
     --default-layout-header-height: 60px;
     --default-layout-width: 1150px;
 }
@@ -22,4 +27,16 @@ body {
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
+}
+
+button,
+input,
+[tabinex] {
+    border: none;
+    outline: none;
+}
+
+a[href] {
+    color: var(--text-color);
+    text-decoration: none;
 }
