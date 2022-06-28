@@ -2,8 +2,9 @@ import { useState, useEffect } from 'react'
 import classNames from 'classnames/bind'
 import Tippy from '@tippyjs/react/headless'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCircleXmark, faSearch, faSpinner } from '@fortawesome/free-solid-svg-icons'
+import { faCircleXmark, faSearch, faSignIn, faSpinner } from '@fortawesome/free-solid-svg-icons'
 
+import Button from '~/components/Button'
 import { Wrapper as PopperWrapper } from '~/components/Popper'
 import styles from './Header.module.scss'
 import images from '~/assets/images'
@@ -38,7 +39,11 @@ function Header() {
                     )}
                 >
                     <div className={cx('search')}>
-                        <input type="text" placeholder="Search accounts and videos..." spellCheck="false" />
+                        <input
+                            type="text"
+                            placeholder="Search accounts and videos..."
+                            spellCheck="false"
+                        />
                         <button className={cx('clear')}>
                             <FontAwesomeIcon icon={faCircleXmark} />
                         </button>
@@ -50,7 +55,12 @@ function Header() {
                     </div>
                 </Tippy>
 
-                <div className={cx('actions')}></div>
+                <div className={cx('actions')}>
+                    <Button text>Upload</Button>
+                    <Button primary leftIcon={<FontAwesomeIcon icon={faSignIn} />}>
+                        Login
+                    </Button>
+                </div>
             </div>
         </header>
     )
